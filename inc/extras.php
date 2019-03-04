@@ -283,3 +283,15 @@ function get_acf_custom_fields($meta_key,$orderBy='ASC') {
     $results = $wpdb->get_results($query);
     return ($results) ? $results : false;
 }
+
+
+function my_custom_admin_head() { ?>
+    <style type="text/css">
+        #side-sortables .acf-field-taxonomy .acf-label,
+        #subdivisiondiv {
+            display: none!important;
+        }
+    </style>
+<?php
+}
+add_action( 'admin_head', 'my_custom_admin_head' );

@@ -89,10 +89,17 @@ function ii_custom_taxonomies() {
         ),
         array(
             'post_type' => 'property',
-            'menu_name' => 'Neighborhood / Subdivision',
+            'menu_name' => 'Neighborhood',
             'plural'    => 'Neighborhood',
             'single'    => 'Neighborhood',
             'taxonomy'  => 'neighborhood'
+        ),
+        array(
+            'post_type' => 'property',
+            'menu_name' => 'Subdivisions',
+            'plural'    => 'Subdivisions',
+            'single'    => 'Subdivision',
+            'taxonomy'  => 'subdivision'
         )
     );
     
@@ -169,11 +176,11 @@ function set_custom_cpt_columns($columns) {
         unset( $columns['date'] );
         unset( $columns['taxonomy-property_types'] );
         unset( $columns['taxonomy-neighborhood'] );
-        //unset( $columns['taxonomy-subdivision'] );
+        unset( $columns['taxonomy-subdivision'] );
         $columns['property_photo'] = __( 'Photo', 'acstarter' );
         $columns['taxonomy-property_types'] = __( 'Types', 'acstarter' );
-        $columns['taxonomy-neighborhood'] = __( 'Neighborhood/Subdivision', 'acstarter' );
-        //$columns['taxonomy-subdivision'] = __( 'Subdivision', 'acstarter' );
+        $columns['taxonomy-neighborhood'] = __( 'Neighborhood', 'acstarter' );
+        $columns['taxonomy-subdivision'] = __( 'Subdivision', 'acstarter' );
         $columns['date'] = __( 'Date', 'acstarter' );
     }
     
