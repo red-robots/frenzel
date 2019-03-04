@@ -13,6 +13,13 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-groups',
             'supports'  => array('title','editor','thumbnail')
         ),
+        array(
+            'post_type' => 'property',
+            'menu_name' => 'Properties',
+            'plural'    => 'Properties',
+            'single'    => 'Property',
+            'supports'  => array('title','editor')
+        ),
     );
     
     if($post_types) {
@@ -72,16 +79,22 @@ function js_custom_init() {
 // Add new taxonomy, make it hierarchical (like categories)
 add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
-        // $posts = array(
-        //     array(
-        //         'post_type' => 'team',
-        //         'menu_name' => 'Team Type',
-        //         'plural'    => 'Team Type',
-        //         'single'    => 'Category',
-        //         'taxonomy'  => 'team_type'
-        //     ),
-        // );
-    $posts = false;
+    $posts = array(
+        array(
+            'post_type' => 'property',
+            'menu_name' => 'Types',
+            'plural'    => 'Types',
+            'single'    => 'Type',
+            'taxonomy'  => 'property_types'
+        ),
+        array(
+            'post_type' => 'property',
+            'menu_name' => 'Neighborhood',
+            'plural'    => 'Neighborhood',
+            'single'    => 'Neighborhood',
+            'taxonomy'  => 'neighborhood'
+        ),
+    );
     
     if($posts) {
         foreach($posts as $p) {

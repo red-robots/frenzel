@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Cantarell';
+  src: url('fonts/Cantarell.eot');
+  src: local('Cantarell'),
+      url('fonts/Cantarell.woff') format('woff'), 
+      url('fonts/Cantarell.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('fonts/Cantarell-Bold.eot');
+  src: local('Cantarell-Bold'),
+      url('fonts/Cantarell-Bold.woff') format('woff'), 
+      url('fonts/Cantarell-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('fonts/Cantarell-Oblique.eot');
+  src: local('Cantarell-Oblique'),
+      url('fonts/Cantarell-Oblique.woff') format('woff'), 
+      url('fonts/Cantarell-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: url('fonts/Cantarell-Oblique.eot');
+  src: local('Cantarell-BoldOblique'),
+      url('fonts/Cantarell-BoldOblique.woff') format('woff'), 
+      url('fonts/Cantarell-BoldOblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: oblique;
+}

@@ -9,29 +9,6 @@ jQuery(document).ready(function ($) {
 	
 	/*
 	*
-	*	Current Page Active
-	*
-	------------------------------------*/
-	$("[href]").each(function() {
-    if (this.href == window.location.href) {
-        $(this).addClass("active");
-        }
-	});
-	/*
-        FAQ dropdowns
-	__________________________________________
-	*/
-	$('.question').click(function() {
-	 
-	    $(this).next('.answer').slideToggle(500);
-	    $(this).toggleClass('close');
-	    $(this).find('.plus-minus-toggle').toggleClass('collapsed');
-	    $(this).parent().toggleClass('active');
-	 
-	});
-
-	/*
-	*
 	*	Responsive iFrames
 	*
 	------------------------------------*/
@@ -78,27 +55,6 @@ jQuery(document).ready(function ($) {
  		 });
 	});
 
-	/*
-	*
-	*	Smooth Scroll to Anchor
-	*
-	------------------------------------*/
-	 $('a').click(function(){
-	    $('html, body').animate({
-	        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-	    }, 500);
-	    return false;
-	});
-
-	/*
-	*
-	*	Nice Page Scroll
-	*
-	------------------------------------*/
-	$(function(){	
-		$("html").niceScroll();
-	});
-	
 	
 	/*
 	*
@@ -125,6 +81,12 @@ jQuery(document).ready(function ($) {
 		if(mobile_nav_height>parentdiv) {
 			$('.mobile-navigation').addClass("overflow-height");
 		}
+	});
+
+
+	$("#quick_search .js-select2").select2({
+	    placeholder: "",
+	    allowClear: true
 	});
 
 });// END #####################################    END

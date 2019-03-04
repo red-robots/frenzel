@@ -247,3 +247,13 @@ add_filter("gform_init_scripts_footer", "init_scripts");
 function init_scripts() {
     return true;
 }
+
+function get_acf_custom_fields($meta_key,$orderBy='ASC') {
+    global $wpdb;
+    $query = "SELECT meta.* FROM {$wpdb->prefix}posts as post 
+              LEFT JOIN {$wpdb->prefix}postmeta as meta ON post.ID=meta.post_id 
+              WHERE meta_key='".$meta_key."' AND post.post_status='publish' GROUP BY meta.meta_value
+              ORDER BY meta.meta_value {$orderBy}";
+    $results = $wpdb->get_results($query);
+    return ($results) ? $results : false;
+}

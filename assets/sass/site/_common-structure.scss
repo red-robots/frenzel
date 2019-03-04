@@ -15,13 +15,13 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+.wrapper:before,.wrapper:after,
 .clear:before, .clear:after { content: " "; display: table; }
-.clear { *zoom: 1; }
-.clear {clear: both;}
+.wrapper, .clear { *zoom: 1; clear: both; }
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
-	padding: 20px;
+	padding: 0 20px;
 	
 	@media screen and (min-width: $tabwidth) {
 		width: 100%;
@@ -31,7 +31,7 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 		padding: 0px;
 	}
 }
-
+.text-center {text-align:center;}
 .content-area {
 	width: 100%;
 	margin: 0px auto;
@@ -61,31 +61,49 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 }
 
 /* Logo */
-.logo , h1.logo {
-	width: 300px;
-	margin: 10px auto;
-
+.logo-wrapper {
+	width: 100%;
+	float: left;
 	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+		width: 23%;
 	}
 }
-.logo a, h1.logo a {
-	width: 300px;
+.logo {
 	display: block;
-
+	float: left;
+	width: 150px;
 	@media screen and (min-width: $tabwidth) {
-		width: 300px;
+		width: 195px;
 	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+	a {
+		display: block;
+		text-decoration: none;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+h1.logo {
+	font-size: 20px;
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+	}
+}
+.site-header .wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@media screen and (min-width: $tabwidth) {
+		@include flexbox();
+		@include flexbox-align-content(center);
+		@include flexbox-align-items(center);
+		@include flexbox-justify(center);
 	}
 }
 .site-footer {
 	width: 100%;
 	clear: both;
+}
+.cantarell {
+	font-family: $font-heading;
 }
