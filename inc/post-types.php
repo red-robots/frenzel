@@ -82,9 +82,9 @@ function ii_custom_taxonomies() {
     $posts = array(
         array(
             'post_type' => 'property',
-            'menu_name' => 'Types',
-            'plural'    => 'Types',
-            'single'    => 'Type',
+            'menu_name' => 'Property Types',
+            'plural'    => 'Property Types',
+            'single'    => 'Property Type',
             'taxonomy'  => 'property_types'
         ),
         array(
