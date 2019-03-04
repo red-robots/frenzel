@@ -1,13 +1,24 @@
 <?php  
+
+$neighbors_subdivisions = array();
+
 $property_types = get_terms( array(
 	'taxonomy' => 'property_types',
-	'hide_empty' => false,
+	'hide_empty' => true,
 ));
 
-$neighbors = get_terms( array(
+$neighbor_list = get_terms( array(
 	'taxonomy' => 'neighborhood',
-	'hide_empty' => false,
+	'hide_empty' => true,
 ));
+
+// $subdivisions = get_terms( array(
+// 	'taxonomy' => 'subdivision',
+// 	'hide_empty' => true,
+// ));
+
+//$neighbors_subdivisions = array_merge($neighbors,$subdivisions);
+//$neighbor_list = ($neighbors_subdivisions) ? sort_object_items($neighbors_subdivisions,'name','ASC') : false;
 
 $street_lists = get_acf_custom_fields('street');
 $mls_lists = get_acf_custom_fields('mls');
@@ -38,9 +49,9 @@ $mls_lists = get_acf_custom_fields('mls');
 				<div class="form-group">
 					<label for="neighborhood">Neighborhood/Subdivision</label>
 					<select id="neighborhood" class="neighborhood form-control js-select2">
-						<?php if ($neighbors) { ?>
+						<?php if ($neighbor_list) { ?>
 							<option></option>
-							<?php foreach ($neighbors as $nh) { 
+							<?php foreach ($neighbor_list as $nh) { 
 								$nh_term_id = $nh->term_id;
 								$nh_term_name = $nh->name;
 							?>

@@ -89,48 +89,67 @@ function ii_custom_taxonomies() {
         ),
         array(
             'post_type' => 'property',
-            'menu_name' => 'Neighborhood',
+            'menu_name' => 'Neighborhood / Subdivision',
             'plural'    => 'Neighborhood',
             'single'    => 'Neighborhood',
             'taxonomy'  => 'neighborhood'
-        ),
+        )
     );
     
     if($posts) {
         foreach($posts as $p) {
-            $p_type = ( isset($p['post_type']) && $p['post_type'] ) ? $p['post_type'] : ""; 
-            $single_name = ( isset($p['single']) && $p['single'] ) ? $p['single'] : "Custom Post"; 
-            $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
-            $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
-            $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
-            
-            
-            if( $taxonomy && $p_type ) {
-                $labels = array(
-                    'name' => _x( $menu_name, 'taxonomy general name' ),
-                    'singular_name' => _x( $single_name, 'taxonomy singular name' ),
-                    'search_items' =>  __( 'Search ' . $plural_name ),
-                    'popular_items' => __( 'Popular ' . $plural_name ),
-                    'all_items' => __( 'All ' . $plural_name ),
-                    'parent_item' => __( 'Parent ' .  $single_name),
-                    'parent_item_colon' => __( 'Parent ' . $single_name . ':' ),
-                    'edit_item' => __( 'Edit ' . $single_name ),
-                    'update_item' => __( 'Update ' . $single_name ),
-                    'add_new_item' => __( 'Add New ' . $single_name ),
-                    'new_item_name' => __( 'New ' . $single_name ),
-                  );
+          $multiple_types = ( isset($p['post_types']) && $p['post_types'] ) ? $p['post_types'] : ""; 
+          $p_type = ( isset($p['post_type']) && $p['post_type'] ) ? $p['post_type'] : ""; 
+          $single_name = ( isset($p['single']) && $p['single'] ) ? $p['single'] : "Custom Post"; 
+          $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
+          $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
+          $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
+          $is_rewrite = ( isset($p['rewrite']) && $p['rewrite'] ) ? $p['rewrite'] : true;
+          $show_admin_column = ( isset($p['show_admin_column']) ) ? $p['show_admin_column'] : true;
+          $hierarchical = ( isset($p['hierarchical']) ) ? $p['hierarchical'] : true;
 
-              register_taxonomy($taxonomy,$p_type, array(
-                'hierarchical' => true,
-                'labels' => $labels,
-                'show_ui' => true,
-                'query_var' => true,
-                'rewrite' => array( 'slug' => $taxonomy ),
-              ));
-            }
-            
+          $labels = array(
+            'name' => _x( $menu_name, 'taxonomy general name' ),
+            'singular_name' => _x( $single_name, 'taxonomy singular name' ),
+            'search_items' =>  __( 'Search ' . $plural_name ),
+            'popular_items' => __( 'Popular ' . $plural_name ),
+            'all_items' => __( 'All ' . $plural_name ),
+            'parent_item' => __( 'Parent ' .  $single_name),
+            'parent_item_colon' => __( 'Parent ' . $single_name . ':' ),
+            'edit_item' => __( 'Edit ' . $single_name ),
+            'update_item' => __( 'Update ' . $single_name ),
+            'add_new_item' => __( 'Add New ' . $single_name ),
+            'new_item_name' => __( 'New ' . $single_name ),
+          );
+
+          if( $p_type && $taxonomy ) {
+            register_taxonomy($taxonomy,$p_type, array(
+              'hierarchical' => $hierarchical,
+              'labels' => $labels,
+              'show_ui' => true,
+              'query_var' => true,
+              '_builtin' => true,
+              'public' => true,
+              'show_admin_column' => $show_admin_column,
+              'rewrite' => $is_rewrite,
+            ));
+          } 
+
+          if( $multiple_types && is_array($multiple_types) && $taxonomy ) {
+            register_taxonomy($taxonomy, $multiple_types, array(
+              'hierarchical' => $hierarchical,
+              'labels' => $labels,
+              'show_ui' => true,
+              'query_var' => true,
+              '_builtin' => true,
+              'public' => true,
+              'show_admin_column' => $show_admin_column,
+              'rewrite' => $is_rewrite,
+            ));
+          }
+
         }
-    }
+   }
 }
 
 // Add the custom columns to the position post type:
@@ -143,6 +162,18 @@ function set_custom_cpt_columns($columns) {
     if($post_type=='team') {
         unset( $columns['date'] );
         $columns['photo'] = __( 'Photo', 'acstarter' );
+        $columns['date'] = __( 'Date', 'acstarter' );
+    }
+
+    if($post_type=='property') {
+        unset( $columns['date'] );
+        unset( $columns['taxonomy-property_types'] );
+        unset( $columns['taxonomy-neighborhood'] );
+        //unset( $columns['taxonomy-subdivision'] );
+        $columns['property_photo'] = __( 'Photo', 'acstarter' );
+        $columns['taxonomy-property_types'] = __( 'Types', 'acstarter' );
+        $columns['taxonomy-neighborhood'] = __( 'Neighborhood/Subdivision', 'acstarter' );
+        //$columns['taxonomy-subdivision'] = __( 'Subdivision', 'acstarter' );
         $columns['date'] = __( 'Date', 'acstarter' );
     }
     
@@ -166,6 +197,22 @@ function custom_post_column( $column, $post_id ) {
                    $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
                 } else {
                     $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
+                }
+                $the_photo .= '</span>';
+                echo $the_photo;
+        }
+    }
+
+    if($post_type=='property') {
+        switch ( $column ) {
+            case 'property_photo' :
+                $img = get_field('main_photo',$post_id);
+                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
+                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
+                if($img_src) {
+                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
+                } else {
+                    $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:25px;position:relative;top:14px;left:-3px;opacity:0.3;"></i>';
                 }
                 $the_photo .= '</span>';
                 echo $the_photo;

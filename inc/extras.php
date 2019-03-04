@@ -248,6 +248,32 @@ function init_scripts() {
     return true;
 }
 
+function sort_object_items($array, $key, $sort='ASC') {
+    $sorter=array();
+    $ret=array();
+    $items = array();
+
+    foreach($array as $k=>$v) {
+        $str = sanitize_title($v->$key);
+        $index = $str.'_'.$k;
+        $sorter[$index] = $v;
+    }
+
+    if($sort=='DESC') {
+        krsort($sorter);
+    } else {
+        ksort($sorter);
+    }
+
+    foreach($sorter as $key=>$val) {
+        $parts = explode('_',$key);
+        $n = $parts[1];
+        $items[$n] = $val;
+    }
+    return $items;
+}
+
+
 function get_acf_custom_fields($meta_key,$orderBy='ASC') {
     global $wpdb;
     $query = "SELECT meta.* FROM {$wpdb->prefix}posts as post 

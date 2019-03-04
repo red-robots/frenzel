@@ -107,3 +107,6 @@ h1.logo {
 .cantarell {
 	font-family: $font-heading;
 }
+.buttondiv a {
+	@include transition(all ease-out .3s);
+}
