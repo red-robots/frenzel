@@ -32,9 +32,10 @@ get_header(); ?>
 
 
 			<?php  
-				$feat_section_title = get_field('feat_section_title');
-				$background_image = get_field('background_image');
-				$featured_properties = get_field('featured_properties');
+			/* FEATURED PROPERTIES */
+			$feat_section_title = get_field('feat_section_title');
+			$background_image = get_field('background_image');
+			$featured_properties = get_field('featured_properties');
 			?>
 			<div class="featured-properties col right">
 				<?php if ($background_image) { ?>
@@ -65,14 +66,17 @@ get_header(); ?>
 									$subdivision_name = ($sub_term) ? $sub_term->name : '';
 								}
 								$bottom_info = array_filter(array($mls_num,$broker_name));
+								$pagelink = get_permalink($feat_post_id);
 								?>
 								<div class="featcol">
 									<div class="featinside clear">
+										<a class="pplink" href="<?php echo $pagelink ?>">
 										<?php if ($main_photo) { ?>
 											<img src="<?php echo $main_photo['url'] ?>" alt="<?php echo $main_photo['title'] ?>" />
 										<?php } else { ?>
 											<img src="<?php echo get_bloginfo('template_url') ?>/images/coming-soon-image.gif" alt="" />
 										<?php } ?>
+										</a>
 										<div class="info">
 											<header class="titlediv">
 												<?php if ($price) { ?>
@@ -113,7 +117,6 @@ get_header(); ?>
 						</div>
 					</div>
 					<?php } ?>
-
 				</div>
 			</div>
 		</div>
