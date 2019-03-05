@@ -7,18 +7,18 @@ $property_types = get_terms( array(
 	'hide_empty' => true,
 ));
 
-$neighbor_list = get_terms( array(
+$neighbors = get_terms( array(
 	'taxonomy' => 'neighborhood',
 	'hide_empty' => true,
 ));
 
-// $subdivisions = get_terms( array(
-// 	'taxonomy' => 'subdivision',
-// 	'hide_empty' => true,
-// ));
+$subdivisions = get_terms( array(
+	'taxonomy' => 'subdivision',
+	'hide_empty' => true,
+));
 
-//$neighbors_subdivisions = array_merge($neighbors,$subdivisions);
-//$neighbor_list = ($neighbors_subdivisions) ? sort_object_items($neighbors_subdivisions,'name','ASC') : false;
+$neighbors_subdivisions = array_merge($neighbors,$subdivisions);
+$neighbor_list = ($neighbors_subdivisions) ? sort_object_items($neighbors_subdivisions,'name','ASC') : false;
 
 $street_lists = get_acf_custom_fields('street');
 $mls_lists = get_acf_custom_fields('mls');

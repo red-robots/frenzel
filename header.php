@@ -11,11 +11,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site clear">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 
 	<header id="masthead" class="site-header clear" role="banner">
-		<div class="wrapper">
+
+		<div class="wrapper clear">
 			<div class="logo-wrapper">
 				<?php if( get_custom_logo() ) { ?>
 		            <div class="logo">
@@ -32,6 +34,16 @@
 				<a class="menu-toggle" href="#"><span></span></a>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu-wrapper') ); ?>
 			</nav><!-- #site-navigation -->
+
+
+			<?php /* MOBILE NAVIGATION */ ?>
+			<div class="mobile-nav-wrapper clear mobile-only">
+				<a href="#" id="toggleMenu" class="toggleMenu"><span></span></a>
+				<nav id="mobile-navigation" class="mobile-main-navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-primary-menu','container_class'=>'mobile-inner-nav clear' ) ); ?>
+				</nav>
+			</div>
+
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 

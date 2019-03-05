@@ -273,6 +273,16 @@ function sort_object_items($array, $key, $sort='ASC') {
     return $items;
 }
 
+function get_instagram_setup() {
+    global $wpdb;
+    $result = $wpdb->get_row( "SELECT option_value FROM $wpdb->options WHERE option_name = 'sb_instagram_settings'" );
+    if($result) {
+        $option = ($result->option_value) ? @unserialize($result->option_value) : false;
+    } else {
+        $option = '';
+    }
+    return $option;
+}
 
 function get_acf_custom_fields($meta_key,$orderBy='ASC') {
     global $wpdb;
@@ -284,6 +294,16 @@ function get_acf_custom_fields($meta_key,$orderBy='ASC') {
     return ($results) ? $results : false;
 }
 
+function format_phone_number($string) {
+    if(empty($string)) return '';
+    $append = '';
+    if (strpos($string, '+') !== false) {
+        $append = '+';
+    }
+    $string = preg_replace("/[^0-9]/", "", "705-666-8888" );
+    $string = preg_replace('/\s+/', '', $string);
+    return $append.$string;
+}
 
 function my_custom_admin_head() { ?>
     <style type="text/css">

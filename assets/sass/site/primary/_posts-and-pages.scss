@@ -70,6 +70,8 @@
 }
 .quick-search {
 	color: #FFF;
+	border-top: 3px solid #FFF;
+	border-bottom: 3px solid #FFF;
 	background: rgb(105,106,108);
 	background: -moz-linear-gradient(top, rgba(105,106,108,1) 0%, rgba(73,73,75,1) 100%);
 	background: -webkit-linear-gradient(top, rgba(105,106,108,1) 0%,rgba(73,73,75,1) 100%);
@@ -200,6 +202,14 @@
 	}
 }
 
+.section-title {
+	font-family: $font-heading;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
 .home-contents {
 	.row {
 		@media screen and (min-width: $tabwidth) {
@@ -216,15 +226,15 @@
 		position: relative;
 	}
 	.col.left {
+		background: $color-gold;
+		color: #FFF;
 		@media screen and (min-width: $tabwidth) {
-			width: 40%;
-			background: $color-gold;
-			color: #FFF;
+			width: 35%;
 		}
 	}
 	.col.right {
 		@media screen and (min-width: $tabwidth) {
-			width: 60%;
+			width: 65%;
 		}
 	}
 	.inside {
@@ -259,11 +269,12 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808384', endColorstr='#0e1111',GradientType=0 );
 	}
 	.section-title {
-		font-family: $font-heading;
-		font-weight: 600;
-		line-height: 1.2;
-		text-transform: uppercase;
-		margin: 0 0 30px;
+		color: #FFF;
+		margin: 0 0 40px;
+	}
+	.section-text {
+		font-size: 18px;
+    	line-height: 1.6;
 	}
 	.section-text p {
 		margin-top: 0;
@@ -313,8 +324,10 @@
 		border: 1px solid #FFF;
 	}
 	.featinside {
+		box-sizing: border-box;
 		background: $color-gold;
-		padding: 6px;
+		padding: 6px 6px 15px;
+		height: 100%;
 		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.36);
 		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.36);
 		box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.36);
@@ -326,5 +339,189 @@
 	.info {
 		line-height: 1.2;
 	}
+	.property_data {
+		font-style: italic;
+		font-weight: 300;
+		font-size: 13px;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1.5;
+	}
+	.separator {
+		display: inline-block;
+		margin: 0 5px;
+	}
+}
+.section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	position: relative;
 }
 
+.section-instagram {
+	padding-left: 30px;
+	padding-right: 30px;
+	@media screen and (min-width: $tabwidth) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.row {
+		@media screen and (min-width: $tabwidth) {
+			@include flexbox();
+			@include flexbox-wrap(wrap);
+			@include flexbox-direction(row);
+			@include flexbox-align-content(flex-start);
+		}
+	}
+	.col {
+		box-sizing: border-box;
+		margin-bottom: 30px;
+		@media screen and (min-width: $tabwidth) {
+			margin-bottom: 0;
+		}
+	}
+	.col.left {
+		@media screen and (min-width: $tabwidth) {
+			width: 35%;
+			@include flexbox();
+			@include flexbox-justify(center);
+			@include flexbox-align-items(center);
+		}
+	}
+	.col.right {
+		@media screen and (min-width: $tabwidth) {
+			width: 65%;
+		}
+		@media screen and (min-width: $midwidth) {
+			padding-right: 45px;
+		}
+	}
+	.insta-wrap {
+		max-width: 240px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+	.insta-title h2 {
+		color: $color__text-main;
+		margin: 0 0 10px;
+	}
+	.insta-icon {
+		width: 100%;
+		position: relative;
+	}
+	.insta-icon span {
+		display: inline-block;
+	}
+	.icon-box {
+		display: inline-block;
+		position: relative;
+		z-index: 5;
+		background: #FFF;
+		padding: 0 20px;
+		text-decoration: none;
+		outline: none;
+	}
+	.insta-icon .icon {
+		color: $color-gold;
+		font-size: 42px;
+	}
+	.insta-icon .line {
+		width: 100%;
+		height: 3px;
+		background: $color-gold;
+		position: absolute;
+  		top: 50%;
+  		transform: translateY(-50%);
+  		left: 0;
+	}
+}
+#instagram_feeds {
+	margin-left: 0;
+	margin-right: 0;
+	@media screen and (min-width: $tabwidth) {
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+		@include flexbox-align-content(flex-start);
+		margin-left: -3%;
+		margin-right: -3%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		margin-left: -4%;
+		margin-right: -4%;
+	}
+	.instaCol {
+		box-sizing: border-box;
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 30px;
+    	margin-bottom: 30px;
+    	border-bottom: 1px solid $color-gold;
+		@media screen and (min-width: $tabwidth) {
+			width: 33%;
+			border-right: 1px solid $color-gold;
+			border-bottom: none;
+			padding-bottom: 0;
+    		margin-bottom: 0;
+    		padding-left: 3%;
+			padding-right: 3%;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding-left: 4%;
+			padding-right: 4%;
+		}
+	}
+	.instaCol:last-child {
+		border-right: none;
+		border-bottom: none;
+		padding-bottom: 0;
+    	margin-bottom: 0;
+	}
+	img {
+		height: auto;
+	}
+	.instalink, img {
+		width: 100%;
+		float: left;
+	}
+	.instalink {
+		display: block;
+		position: relative;
+		outline: none;
+		text-decoration: none;
+	}
+	.caption {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		background: rgba(167,160,136,.9);
+		color: #FFF;
+		opacity: 0;
+		visibility: hidden;
+		@include transition(all ease-out .3s);
+		.txtwrap {
+			display: block;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+			box-sizing: border-box;
+			padding: 20px 30px;
+			margin-top: 10px;
+			@include transition(all ease-out .3s);
+		}
+	}
+	.instalink:hover .caption {
+		opacity: 1;
+		visibility: visible;
+		.txtwrap {
+			margin-top: 0;
+		}
+	}
+}
