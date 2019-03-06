@@ -642,12 +642,12 @@
 		color: #FFF;
 	}
 	.list .item {
-		margin-top: 15px;
-		line-height: 1.2;
-		font-size: 13px;
-	}
-	.list .item:first-child {
-		margin-top: 0;
+		margin-top: 13px;
+		line-height: 1.25;
+		font-size: 12px;
+		&.first {
+			margin-top: 0;
+		}
 	}
 	.staff {
 		padding-top: 70px;

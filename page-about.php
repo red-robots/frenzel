@@ -40,10 +40,11 @@ get_header(); ?>
 								<?php 
 									$list = preg_replace("/<br\W*?\/>/", "___", $licenses);
 									$parts = explode("___",$list);
-									foreach($parts as $p) {
+									$x=1; foreach($parts as $p) {
 										if($p) { ?>
-										<div class="item"><?php echo $p; ?></div>
-										<?php }
+										<div class="item<?php echo ($x==1) ? ' first':''?>"><?php echo $p; ?></div>
+										<?php $x++; 
+										}
 									}
 								?>
 							</div>
