@@ -594,10 +594,12 @@
 		padding-bottom: 70px;
 	}
 	.col-left {
+		margin-bottom: 30px;
 		@media screen and (min-width: $tabwidth) {
 			width: 29%;
 			float: left;
 			margin-top: 5px;
+			margin-bottom: 0;
 		}
 	}
 	.col-right {
@@ -615,10 +617,13 @@
 		margin: 0 0 10px;
 		font-family: $font-heading;
 		font-weight: 300;
-		font-size: 30px;
+		font-size: 25px;
 		line-height: 1.2;
 		color: $color-gold;
 		text-transform: uppercase;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 30px;
+		}
 	}
 	p {
 		margin-top: 0;
