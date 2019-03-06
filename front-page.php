@@ -65,6 +65,7 @@ get_header(); ?>
 									$sub_term = get_term($subdivision,'subdivision');
 									$subdivision_name = ($sub_term) ? $sub_term->name : '';
 								}
+								$neighborhood = get_the_terms($feat_post_id,'neighborhood');
 								$bottom_info = array_filter(array($mls_num,$broker_name));
 								$pagelink = get_permalink($feat_post_id);
 								?>
@@ -90,6 +91,14 @@ get_header(); ?>
 											<div class="property_data">
 												<?php if ($subdivision) { ?>
 													<div class="pdata">Subdivision: <?php echo $subdivision_name ?></div>	
+												<?php } ?>
+												<?php if ($neighborhood) { ?>
+													<div class="pdata">Neighborhood:
+														<?php $n=1; foreach ($neighborhood as $nh) { 
+															$comma = ($n>1) ? ', ':'';
+															echo $comma . $nh->name;
+														$n++; } ?>
+													</div>
 												<?php } ?>
 												<?php if ($other_info) { ?>
 													<div class="pdata"><?php echo $other_info ?></div>	
