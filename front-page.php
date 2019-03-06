@@ -77,7 +77,7 @@ get_header(); ?>
 											<img src="<?php echo get_bloginfo('template_url') ?>/images/coming-soon-image.gif" alt="" />
 										<?php } ?>
 										</a>
-										<div class="info">
+										<div class="info clear">
 											<header class="titlediv">
 												<?php if ($price) { ?>
 													<div class="price"><?php echo $price ?></div>

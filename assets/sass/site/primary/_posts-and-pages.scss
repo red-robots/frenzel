@@ -361,7 +361,10 @@
 		}
 	}
 	.featcol img {
-		border: 1px solid #FFF;
+		width: 100%;
+		height: auto;
+		float: left;
+		@include transition(all ease .3s);
 	}
 	.featinside {
 		box-sizing: border-box;
@@ -375,6 +378,12 @@
 	.pplink {
 		display: block;
 		width: 100%;
+		overflow: hidden;
+		float: left;
+		border: 1px solid #FFF;
+		&:hover img {
+			transform: scale(1.1);
+		}
 	}
 	.titlediv {
 		margin: 10px 0 10px;
