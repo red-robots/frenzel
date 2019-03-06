@@ -73,7 +73,7 @@ get_header(); ?>
 									<div class="featinside clear">
 										<a class="pplink" href="<?php echo $pagelink ?>">
 										<?php if ($main_photo) { ?>
-											<img src="<?php echo $main_photo['url'] ?>" alt="<?php echo $main_photo['title'] ?>" />
+											<img src="<?php echo $main_photo['sizes']['medium_large'] ?>" alt="<?php echo $main_photo['title'] ?>" />
 										<?php } else { ?>
 											<img src="<?php echo get_bloginfo('template_url') ?>/images/coming-soon-image.gif" alt="" />
 										<?php } ?>
