@@ -47,8 +47,6 @@
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<?php if( is_front_page() || is_home() ) { ?>
-		<?php get_template_part('template-parts/banner','home') ?>
-	<?php } ?>
+	<?php get_template_part('template-parts/banner') ?>
 
 	<div id="content" class="site-content clear">
