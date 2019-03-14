@@ -810,6 +810,81 @@
 	}
 }
 
+.davis-farrell {
+	font-size:0px;
+	color: transparent;
+	line-height: 1;
+	h3,
+	.idxclear {
+		display: none;
+	}
+	#idx {
+		margin-left: -10px;
+		margin-right: -10px;
+		@media screen and (min-width: $tabwidth) {
+			@include flexbox();
+			@include flexbox-wrap(wrap);
+			@include flexbox-direction(row);
+			@include flexbox-align-content(flex-start);
+		}
+	}
+	.idxprop {
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 25px;
+		color: #FFF;
+		font-size: 14px;
+		width: 100%;
+		font-style: italic;
+		font-size: 13px;
+		font-weight: 300;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			float: left;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 25%;
+			margin-bottom: 0;
+		}
+		b {
+			font-weight: 300;
+		}
+		small {
+			display: block;
+			margin-top: 5px;
+		}
+		.inner {
+			box-sizing: border-box;
+			padding: 5px 5px 10px 5px;
+			height: 100%;
+			background: $color-gold;
+		}
+		.price {
+			display: inline-block;
+			width: 100%;
+			font-weight: 600;
+			margin-bottom: 6px;
+		}
+	}
+	.idxphoto2 {
+		width: 100%;
+		margin: 0 0 10px;
+		padding: 0 0;
+		float: none;
+		height: auto!important;
+		a {
+			display: block;
+			width: 100%;
+		}
+		img {
+			max-width: 100%!important;
+			width: 100%!important;
+			height: auto!important;
+		}
+	}
+}
+
 .error404content {
 	.entry-title {
 		margin-bottom: 0;

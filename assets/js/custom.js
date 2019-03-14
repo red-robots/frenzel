@@ -83,4 +83,11 @@ jQuery(document).ready(function ($) {
 	    allowClear: true
 	});
 
+	$("#idx .idxprop").each(function(){
+		var html_content = $(this).html();
+		var new_content = '<div class="inner clear">'+html_content+'</div>';
+		$(this).html(new_content);
+		$( "b:contains('Price')" ).addClass('price');
+	});
+
 });// END #####################################    END
