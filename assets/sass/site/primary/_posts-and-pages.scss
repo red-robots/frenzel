@@ -137,14 +137,31 @@
 		font-weight: 300;
 		font-size: 14px;
 	}
+	input {
+		width: 100%;
+		border-radius: 0;
+		@media screen and (min-width: $tabwidth) {
+			width: auto;
+		}
+	}
+	input.qsearch {
+		box-shadow: none;
+		text-shadow: none;
+		border-radius: 0;
+		background-color: $color-gold;
+		color: #fff;
+		padding: 15px 30px;
+		line-height: 1;
+	}
 	.form-fields {
 		margin-left: -12px;
 		margin-right: -12px;
 		@media screen and (min-width: $tabwidth) {
 			@include flexbox();
-			@include flexbox-wrap(wrap);
+			@include flexbox-wrap(nowrap);
 			@include flexbox-direction(row);
-			@include flexbox-align-content(flex-start);
+			@include flexbox-align-content(center);
+			@include flexbox-justify(center);
 		}
 	}
 	.form-group {
@@ -154,10 +171,11 @@
 		padding-right: 12px;
 		margin-bottom: 20px;
 		@media screen and (min-width: $tabwidth) {
-			width: 49.5%;
+			// width: 49.5%;
+			width: auto;
 		}
 		@media screen and (min-width: $midwidth) {
-			width: 24.5%;
+			// width: 24.5%;
 			margin-bottom: 0;
 		}
 	}

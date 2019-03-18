@@ -5,7 +5,8 @@
 
 get_header(); ?>
 
-<?php get_template_part('template-parts/quick_search') ?>
+<?php //get_template_part('template-parts/quick_search') ?>
+<?php get_template_part('template-parts/home-search') ?>
 
 <div id="primary" class="full-content-area clear">
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -35,7 +36,7 @@ get_header(); ?>
 			/* FEATURED PROPERTIES */
 			$feat_section_title = get_field('feat_section_title');
 			$background_image = get_field('background_image');
-			
+			// http://frenzel.localhomesearch.net/idx/?op=query&zip=28205
 			?>
 			<div class="featured-properties col right">
 				<?php if ($background_image) { ?>

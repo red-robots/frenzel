@@ -6,6 +6,26 @@
  */
 
 jQuery(document).ready(function ($) {
+
+	// $('#open').click(function() {
+ //    var fixedData1 = 'http://frenzel.localhomesearch.net/idx/?op=query&stype=area&_srf=1',
+ //        fixedData2 = '+',
+ //        userEntry1 = $('#property_type').find(":selected").val(),
+ //        userEntry2 = $('#neighborhood').find(":selected").val();
+
+ //    var newWindow = window.open(fixedData1 + userEntry1 + fixedData2 + two, '_blank');
+ //    newWindow.focus();
+
+ //    function showURL() {
+	//     var d1 = $("#property_type").find(":selected").attr("value");
+	//     var d2 = $("#neighborhood").find(":selected").attr("value");
+	//     //var d3 = $("#pets").find(":selected").attr("value");
+	//     var url = ("http://frenzel.localhomesearch.net/idx/?op=query&stype=area&_srf=1&area=" + d1 + "&subdivision=" + d2);
+	//     alert(url);
+	//     window.location = url;
+	//     return false;
+	// }
+
 	
 	/*
 	*
