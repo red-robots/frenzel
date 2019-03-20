@@ -49,4 +49,6 @@
 
 	<?php get_template_part('template-parts/banner') ?>
 
+	
+
 	<div id="content" class="site-content clear">

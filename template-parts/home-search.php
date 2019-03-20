@@ -33,10 +33,10 @@
 
 
 
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="neighborhood">Area:</label>
 					<select name="area" id="neighborhood" class="neighborhood form-control js-select2">
-						<!-- <option value="">Choose an area</option> -->
+						
 						<option value="1"> N Mecklenburg</option>
 						<option value="2"> NE Mecklenburg</option>
 						<option value="3"> E Mecklenburg</option>
@@ -88,14 +88,18 @@
 						<option value="37"> Yadkin County</option>
 						<option value="48"> Yancey County</option>
 					</select>
-				</div>
-				<!-- <div class="form-group">
-					<label for="subdivision">Subdivision/Complex:</label>
-					<input type="text" id="suggest1" name="subdivision" size="35" value=""/>
 				</div> -->
 				<div class="form-group">
+					<label for="subdivision">Subdivision/Complex:</label>
+					<input type="text" id="suggest1" name="subdivision" size="35" value=""/>
+				</div>
+				<!-- <div class="form-group">
 					<label for="city">City :</label>
 					<input type="text" size="15" name="city">
+				</div> -->
+				<div class="form-group">
+				<label for="street">Street :</label>
+					<input type="text" size="15" name="street">
 				</div>
 				<div class="form-group">
 					<label for="zip">Zip:</label> 
