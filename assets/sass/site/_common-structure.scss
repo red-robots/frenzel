@@ -21,6 +21,9 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	float: left;
 	background-color: $color-gold;
 }
+.dfv2-power {
+	text-align: center;
+}
 .wrapper:before,.wrapper:after,
 .clear:before, .clear:after { content: " "; display: table; }
 .wrapper, .clear { *zoom: 1; clear: both; }
