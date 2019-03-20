@@ -7,6 +7,16 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136611224-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136611224-2');
+</script>
+
 <?php wp_head(); ?>
 </head>
 
@@ -49,6 +59,6 @@
 
 	<?php get_template_part('template-parts/banner') ?>
 
-	
+
 
 	<div id="content" class="site-content clear">
