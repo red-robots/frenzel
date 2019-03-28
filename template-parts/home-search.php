@@ -1,7 +1,7 @@
 <div class="quick-search">
 	<div class="wrapper">
 		<h3 class="form-title cantarell text-center">Quick Search</h3>
-		<form name="dfform" action="http://frenzel.localhomesearch.net/idx/" class="quick-search-form" id="quick_search">
+		<form name="dfform" action="https://frenzel.localhomesearch.net/idx/" class="quick-search-form" id="quick_search">
 		
 		<div class="form-fields clear">
 			<input type="hidden" name="op" value="query">
