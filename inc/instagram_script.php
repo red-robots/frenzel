@@ -38,6 +38,7 @@ if($setup) {
                     type: 'GET',
                     data: {access_token: token, count: num_photos},
                     success: function(response){
+                        console.log(response);
                         if(response.data!=undefined) {
                             var obj = response.data;
                             $(obj).each(function(k,v){
@@ -54,7 +55,7 @@ if($setup) {
                                 content += '</a></div></div>';
                                 $("#instagram_feeds").append(content);
                             });
-                            //$("#instagramLink").attr('href',instagram_link).attr('target','_blank');
+                            $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
                             //$("#instagram_feeds").html(content);
                         }  
                     },
