@@ -52,8 +52,8 @@ if($setup) {
                                 }
                                 var caption_excerpt = stringTruncate(caption,150);
                                 var instalink = v.link;
-                                var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
-                                    content += '<img src="'+img_src+'" alt="" />';
+                                var content = '<div class="instaCol js-blocks"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
+                                    content += '<span class="insta-image-thumb" style="background-image:url('+img_src+')"></span><img class="ithumb" src="'+img_src+'" alt="" />';
                                 if(caption) {
                                     content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
                                 }
@@ -64,7 +64,8 @@ if($setup) {
 
                             $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
                             //$("#instagram_feeds").html(content);
-                        }  
+                        }
+                        $('.js-blocks').matchHeight();  
                     },
                     error: function(data){
                     }

@@ -1964,10 +1964,13 @@ h1.logo{font-size:20px}
 @media screen and (min-width:600px){#instagram_feeds .instaCol{width:33%;border-right:1px solid #b9b299;border-bottom:0;padding-bottom:0;margin-bottom:0;padding-left:2%;padding-right:2%}
 }@media screen and (min-width:1200px){#instagram_feeds .instaCol{padding-left:4%;padding-right:4%}
 }#instagram_feeds .instaCol:last-child{border-right:0;border-bottom:0;padding-bottom:0;margin-bottom:0}
+#instagram_feeds .instagram-image-div{height:100%}
 #instagram_feeds img{height:auto}
+#instagram_feeds .insta-image-thumb{display:block;width:100%;height:100%;background-size:cover;background-repeat:no-repeat;background-position:center;position:absolute;top:0;left:0;z-index:5}
 #instagram_feeds .instalink,#instagram_feeds img{width:100%;float:left}
-#instagram_feeds .instalink{display:block;position:relative;outline:0;text-decoration:none}
-#instagram_feeds .caption{display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;background:rgba(167,160,136,0.9);color:#FFF;opacity:0;visibility:hidden;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+#instagram_feeds .ithumb{visibility:hidden}
+#instagram_feeds .instalink{width:100%;height:100%;display:block;position:relative;outline:0;text-decoration:none}
+#instagram_feeds .caption{display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:10;background:rgba(167,160,136,0.9);color:#FFF;opacity:0;visibility:hidden;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 #instagram_feeds .caption .txtwrap{display:block;width:100%;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);text-align:center;box-sizing:border-box;padding:20px 30px;margin-top:10px;line-height:1.4;font-size:12px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 #instagram_feeds .instalink:hover .caption{opacity:1;visibility:visible}
 #instagram_feeds .instalink:hover .caption .txtwrap{margin-top:0}
