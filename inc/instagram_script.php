@@ -59,8 +59,6 @@ if($setup) {
                                 content += '</a></div></div>';
 
                                 $("#instagram_feeds").append(content);
-                                console.log(v);
-                                console.log(img);
                             });
 
                             $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
