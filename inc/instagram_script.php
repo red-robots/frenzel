@@ -42,6 +42,7 @@ if($setup) {
                             var obj = response.data;
 
                             $.each( obj, function( k, v ) {
+                                console.log(v);
                                 var img = v.images;
                                 var img_src = img.standard_resolution.url;
                                 var caption = v.caption.text;
@@ -55,7 +56,7 @@ if($setup) {
                                 content += '</a></div></div>';
                                 $("#instagram_feeds").append(content);
                             });
-                            
+
                             $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
                             //$("#instagram_feeds").html(content);
                         }  
