@@ -31,7 +31,6 @@ if($setup) {
                 var token = insta_token,
                 userid = insta_u_id, 
                 api_call = 'https://api.instagram.com/v1/users/'+userid+'/media/recent?access_token=' + token;
-
                 $.ajax({
                     url: api_call, 
                     dataType: 'jsonp',
@@ -42,7 +41,7 @@ if($setup) {
                             var obj = response.data;
 
                             $.each( obj, function( k, v ) {
-                                console.log(v);
+                                
                                 var img = v.images;
                                 var img_src = img.standard_resolution.url;
                                 var caption = v.caption.text;
@@ -54,6 +53,10 @@ if($setup) {
                                     content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
                                 }
                                 content += '</a></div></div>';
+
+                                console.log(img);
+                                console.log(content);
+                                
                                 $("#instagram_feeds").append(content);
                             });
 
