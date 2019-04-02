@@ -37,8 +37,7 @@ if($setup) {
                     dataType: 'jsonp',
                     type: 'GET',
                     data: {access_token: token, count: num_photos},
-                    success: function(response){
-                        console.log(response);
+                    success: function(response) {
                         if(response.data!=undefined) {
                             var obj = response.data;
                             $(obj).each(function(k,v){
@@ -53,6 +52,9 @@ if($setup) {
                                     content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
                                 }
                                 content += '</a></div></div>';
+
+                                console.log(img_src);
+                                
                                 $("#instagram_feeds").append(content);
                             });
                             $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
