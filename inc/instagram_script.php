@@ -45,9 +45,10 @@ if($setup) {
                                 
                                 var img = v.images;
                                 var img_src = img.standard_resolution.url;
+                                var cap = v.caption;
                                 var caption = '';
-                                if( v.caption.text !=undefined ) {
-                                    caption = v.caption.text;
+                                if( cap ) {
+                                    caption = cap.text;
                                 }
                                 var caption_excerpt = stringTruncate(caption,150);
                                 var instalink = v.link;
