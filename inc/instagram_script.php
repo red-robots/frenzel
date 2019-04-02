@@ -56,7 +56,7 @@ if($setup) {
 
                                 console.log(img);
                                 console.log(content);
-                                
+
                                 $("#instagram_feeds").append(content);
                             });
 
@@ -65,6 +65,7 @@ if($setup) {
                         }  
                     },
                     error: function(data){
+                        console.log(data);
                     }
                 });
             }
