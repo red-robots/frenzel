@@ -41,29 +41,37 @@ if($setup) {
                         if(response.data!=undefined) {
                             var obj = response.data;
 
-                            console.log(obj);
+                            
 
-                            $(obj).each(function(k,v){
-                                var img = v.images;
-                                var img_src = img.standard_resolution.url;
-                                var caption = v.caption.text;
-                                var caption_excerpt = stringTruncate(caption,150);
-                                var instalink = v.link;
+                            $.each( obj, function( k, v ) {
+                                console.log(v);
+                            });
+
+
+                            // $(obj).each(function(k,v){
+
+                            //     console.log(obj);
+
+                            //     var img = v.images;
+                            //     var img_src = img.standard_resolution.url;
+                            //     var caption = v.caption.text;
+                            //     var caption_excerpt = stringTruncate(caption,150);
+                            //     var instalink = v.link;
 
                                
 
-                                var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
-                                    content += '<img src="'+img_src+'" alt="" />';
-                                if(caption) {
-                                    content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
-                                }
-                                content += '</a></div></div>';
+                            //     var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
+                            //         content += '<img src="'+img_src+'" alt="" />';
+                            //     if(caption) {
+                            //         content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
+                            //     }
+                            //     content += '</a></div></div>';
 
                                 
 
-                                $("#instagram_feeds").append(content);
-                            });
-                            $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
+                            //     $("#instagram_feeds").append(content);
+                            // });
+                            // $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
                             //$("#instagram_feeds").html(content);
                         }  
                     },
