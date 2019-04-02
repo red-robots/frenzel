@@ -44,6 +44,6 @@
 <?php if( is_front_page() || is_home() ) {
 	get_template_part('inc/instagram_script');
 } ?>
-<script src="<?php echo get_bloginfo('template_url') ?>/assets/js/vendors/jquery.autocomplete.min.js" type="text/javascript"></script>
+
 </body>
 </html>
