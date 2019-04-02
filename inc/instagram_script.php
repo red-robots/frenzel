@@ -40,13 +40,16 @@ if($setup) {
                     success: function(response) {
                         if(response.data!=undefined) {
                             var obj = response.data;
-                            console.log(obj);
+
                             $(obj).each(function(k,v){
                                 var img = v.images;
                                 var img_src = img.standard_resolution.url;
                                 var caption = v.caption.text;
                                 var caption_excerpt = stringTruncate(caption,150);
                                 var instalink = v.link;
+
+                                console.log(v);
+
                                 var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
                                     content += '<img src="'+img_src+'" alt="" />';
                                 if(caption) {
