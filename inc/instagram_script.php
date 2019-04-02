@@ -25,6 +25,7 @@ if($setup) {
         var instagram_link = '<?php echo $instagram_link; ?>';
         var follow_btn_text = '<?php echo $follow_btn_text; ?>';
         var num_photos = '<?php echo $num_photos; ?>';
+        jQuery.noConflict();
         jQuery(document).ready(function ($) {
             /* ==== INSTAGRAM POSTS ==== */
             if(insta_u_id && insta_token) {
@@ -44,20 +45,19 @@ if($setup) {
                                 
                                 var img = v.images;
                                 var img_src = img.standard_resolution.url;
-                                var caption = v.caption.text;
-                                var caption_excerpt = stringTruncate(caption,150);
-                                var instalink = v.link;
-                                var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
-                                    content += '<img src="'+img_src+'" alt="" />';
-                                if(caption) {
-                                    content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
-                                }
-                                content += '</a></div></div>';
+                                // var caption = v.caption.text;
+                                // var caption_excerpt = stringTruncate(caption,150);
+                                // var instalink = v.link;
+                                // var content = '<div class="instaCol"><div class="instagram-image-div clear"><a class="instalink" href="'+instalink+'" target="_blank">';
+                                //     content += '<img src="'+img_src+'" alt="" />';
+                                // if(caption) {
+                                //     content += '<span class="caption"><span class="txtwrap">'+caption_excerpt+'</span></span>';
+                                // }
+                                // content += '</a></div></div>';
 
+                                // $("#instagram_feeds").append(content);
+                                console.log(v);
                                 console.log(img);
-                                console.log(content);
-
-                                $("#instagram_feeds").append(content);
                             });
 
                             $("#instagramLink").attr('href',instagram_link).attr('target','_blank');
@@ -65,7 +65,6 @@ if($setup) {
                         }  
                     },
                     error: function(data){
-                        console.log(data);
                     }
                 });
             }
