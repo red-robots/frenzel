@@ -40,11 +40,9 @@ if($setup) {
                     success: function(response) {
 
                         console.log(response);
-                        
+
                         if(response.data!=undefined) {
                             var obj = response.data;
-
-                            console.log(obj);
 
                             $(obj).each(function(k,v){
                                 var img = v.images;
