@@ -91,9 +91,7 @@ get_header(); ?>
 				
 			</div>
 			<div class="col right insta-feeds">
-				<div id="instagram_feeds" class="inst-row">
-					
-				</div>
+				<div id="instagram_feeds" class="inst-row"></div>
 			</div>
 		</div>
 		
