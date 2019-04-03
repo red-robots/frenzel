@@ -49,6 +49,10 @@ get_header(); ?>
 					<?php } ?>
 
 					<div class="davis-farrell">
+						<?php  
+							$idx_id = ( isset($_GET['id']) && $_GET['id'] ) ? urldecode($_GET['id']) : '';
+							echo $idx_id;
+						?>
 						<?php echo do_shortcode('[idx mylistings="1"]');?>
 			        </div><!--davis-farrell-->
 

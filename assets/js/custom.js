@@ -110,4 +110,16 @@ jQuery(document).ready(function ($) {
 		$( "b:contains('Price')" ).addClass('price');
 	});
 
+	if( $(".home .dfres-address-detail").length > 0 ) {
+		var address = $(".home .dfres-address-detail").html();
+		var price = $(".home .dfres-price-detail").html();
+		var subdivision = $(".home .dfres-subdivision-detail").html();
+		var content = '<div class="idx-dfres-address-detail">'+address+'</div>';
+			content += '<div class="idx-dfres-price-detail">'+price+'</div>';
+			content += '<div class="idx-dfres-subdivision-detail">'+subdivision+'</div>';
+		var property_info = '<div class="idx-property-name">'+content+'</div>';
+		//$(".home .davis-farrell").prepend(property_info);
+		$(property_info).insertAfter($(".home .featured-properties h2.section-title"));
+	}
+
 });// END #####################################    END
