@@ -933,8 +933,9 @@
 		}
 	}
 	#idxmap_canvas {
+		height: 300px!important;
 		@media screen and (min-width: $tabwidth) {
-			height: 290px!important;
+			height: 280px!important;
 			margin-top: -15px;
 		}
 		@media screen and (min-width: $deskwidth) {
@@ -963,13 +964,14 @@
 		width: 100%;
 		float: left;
 		padding: 0 0;
-		margin-left: -5px;
+		margin-left: 0;
 		margin-right: -5px;
 		@include flexbox();
 		@include flexbox-wrap(wrap);
 		@include flexbox-direction(row);
 		@media screen and (min-width: $tabwidth) {
 			padding-left: 10px;
+			margin-left: -5px;
 		}
 		.dfres-subhead {
 			display: block;
@@ -1042,9 +1044,7 @@
 	font-size: 18px;
 	line-height: 1.3;
 	margin-bottom: 10px;
-	@media screen and (min-width: $tabwidth) {
-		padding-left: 10px;
-	}
+	padding-left: 10px;
 	.idx-dfres-address-detail {
 		font-size: 23px;
 	}

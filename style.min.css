@@ -2024,14 +2024,15 @@ h1.logo{font-size:20px}
 .davis-farrell .idxphoto2 img{max-width:100% !important;width:100% !important;height:auto !important;border:1px solid rgba(254,255,255,0.8)}
 .davis-farrell .dfres-col50{position:relative}
 @media screen and (min-width:600px){.davis-farrell .dfres-col50 .btn-xs.btn-primary{position:absolute;right:10px;top:-25px}
-}@media screen and (min-width:600px){.davis-farrell #idxmap_canvas{height:290px !important;margin-top:-15px}
+}.davis-farrell #idxmap_canvas{height:300px !important}
+@media screen and (min-width:600px){.davis-farrell #idxmap_canvas{height:280px !important;margin-top:-15px}
 }@media screen and (min-width:1200px){.davis-farrell #idxmap_canvas{height:330px !important}
 }.davis-farrell .wp-font p{color:#FFF;line-height:1.5}
 .davis-farrell .dfres-subhead{color:#b9b299}
 .davis-farrell table td{color:#FFF;border-bottom:1px solid rgba(255,255,255,0.25)}
 .davis-farrell .dfres-address-detail,.davis-farrell .dfres-subdivision-detail,.davis-farrell .dfres-price-detail{color:#FFF;margin-bottom:8px !important;display:none !important}
-.davis-farrell .dfres-col{width:100%;float:left;padding:0;margin-left:-5px;margin-right:-5px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-@media screen and (min-width:600px){.davis-farrell .dfres-col{padding-left:10px}
+.davis-farrell .dfres-col{width:100%;float:left;padding:0;margin-left:0;margin-right:-5px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+@media screen and (min-width:600px){.davis-farrell .dfres-col{padding-left:10px;margin-left:-5px}
 }.davis-farrell .dfres-col .dfres-subhead{display:block;width:100%;float:left;margin-bottom:10px;padding-left:5px}
 .davis-farrell .dfres-col .form-control{border-radius:0}
 .davis-farrell .dfres-col .form-control#verif{margin-top:10px}
@@ -2046,9 +2047,8 @@ h1.logo{font-size:20px}
 }@media screen and (min-width:900px){.davis-farrell .dfres-col .dfv3-picTH{width:20%}
 }.davis-farrell .dfres-col .dfv3-picTH a{display:block;width:100%;float:left;padding:4px}
 .davis-farrell .dfres-col .dfv3-picTH img{width:100%;height:auto;float:left}
-.idx-property-name{font-size:18px;line-height:1.3;margin-bottom:10px}
-@media screen and (min-width:600px){.idx-property-name{padding-left:10px}
-}.idx-property-name .idx-dfres-address-detail{font-size:23px}
+.idx-property-name{font-size:18px;line-height:1.3;margin-bottom:10px;padding-left:10px}
+.idx-property-name .idx-dfres-address-detail{font-size:23px}
 .idx-property-name .idx-dfres-subdivision-detail{font-size:15px}
 .error404content .entry-title{margin-bottom:0}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
