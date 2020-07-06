@@ -95,7 +95,9 @@ get_header(); ?>
 				
 			</div>
 			<div class="col right insta-feeds">
-				<div id="instagram_feeds" class="inst-row"></div>
+				<div id="instagram_feeds" class="inst-row">
+					<?php echo do_shortcode('[instagram-feed user="frenzel_properties"]); ?>
+				</div>
 			</div>
 		</div>
 		
