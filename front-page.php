@@ -39,10 +39,10 @@ get_header(); ?>
 			// http://frenzel.localhomesearch.net/idx/?op=query&zip=28205
 			?>
 			<div class="featured-properties col right">
-				<?php if ($background_image) { ?>
-					<div class="bg-image" style="background-image:url('<?php echo $background_image['url'];?>');"></div>
+				<?php //if ($background_image) { ?>
+					<div class="bg-image" style="background-image:url('4');"></div>
 					<div class="bg-overlay"></div>
-				<?php } ?>
+				<?php //} ?>
 				<div class="inside clear">
 					<?php if ($feat_section_title) { ?>
 						<h2 class="section-title text-center"><?php echo $feat_section_title ?></h2>
